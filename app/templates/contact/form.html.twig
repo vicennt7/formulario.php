@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contato{% endblock %}
+
+{% block body %}
+    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+    <section class="py-4">
+        <div class="container">
+            <div class="hero-card p-4 p-lg-5 mb-4 text-center">
+                <div class="d-inline-flex align-items-center gap-2 mb-3 badge-soft">
+                    <span class="small">Resposta média &lt; 24h</span>
+                </div>
+                <h1 class="display-6 fw-semibold mb-2">Fale conosco</h1>
+                <p class="text-muted mb-0">Envie sua mensagem e retornaremos o quanto antes.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-7 col-xl-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4 p-lg-5">
+                            <h2 class="h5 mb-3 text-primary">Formulário</h2>
+                            <p class="text-muted small mb-4">Campos obrigatórios são validados automaticamente.</p>
+
+                            {{ form_start(form) }}
+                                <div class="mb-3">
+                                    {{ form_label(form.name, null, {'label_attr': {'class': 'form-label fw-semibold'}}) }}
+                                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                                    <div class="form-text text-danger small">{{ form_errors(form.name) }}</div>
+                                </div>
+                                <div class="mb-3">
+                                    {{ form_label(form.email, null, {'label_attr': {'class': 'form-label fw-semibold'}}) }}
+                                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                    <div class="form-text text-danger small">{{ form_errors(form.email) }}</div>
+                                </div>
+                                <div class="mb-3">
+                                    {{ form_label(form.message, null, {'label_attr': {'class': 'form-label fw-semibold'}}) }}
+                                    {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': 6}}) }}
+                                    <div class="form-text text-danger small">{{ form_errors(form.message) }}</div>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary btn-lg" type="submit">Enviar mensagem</button>
+                                </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h6 text-uppercase text-muted mb-3">Informações</h3>
+                            <ul class="list-unstyled mb-0 small text-muted">
+                                <li class="mb-2">Tempo de resposta: até 1 dia útil.</li>
+                                <li class="mb-2">Retorno por e-mail informado.</li>
+                                <li>Dados armazenados no banco local SQLite.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
