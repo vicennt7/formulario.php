@@ -48,4 +48,4 @@ Acesse: http://localhost:8000
 ### Observações
 - Para usar outro banco (ex.: MySQL/Postgres), ajuste `DATABASE_URL` e rode `doctrine:migrations:diff` + `doctrine:migrations:migrate`.
 - Assets: `asset()` habilitado via `symfony/asset`.
-# formulario.php
+
